@@ -1,0 +1,387 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Oxygen', sans-serif;
+}
+
+.contenedor {
+    max-width: 1200px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+/* header */
+
+header {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(20,20,20,1);
+}
+
+header .menu_nav {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 10%;
+}
+
+header .menu_nav ul li {
+    list-style: none;
+}
+
+header .menu_nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    margin-top: 40px;
+    margin-right: 40px;
+    display: inline-block;
+    transition: all 0.3s;
+}
+
+header .menu_nav ul li a:hover {
+    color: rgba(255, 255, 255, 0.644);
+}
+
+header .wave {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #4973ff;
+}
+
+header .wave span {
+    position: absolute;
+    width: 325vh;
+    height: 325vh;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, -75%);
+    background: #000;
+}
+
+header .wave span:nth-child(1) {
+    animation: animar 5s linear infinite;
+    border-radius: 45%;
+    background: rgba(20,20,20,1);
+}
+
+header .wave span:nth-child(2) {
+    animation: animar 10s linear infinite;
+    border-radius: 40%;
+    background: rgba(20,20,20,0.5);
+}
+
+header .wave span:nth-child(3) {
+    animation: animar 15s linear infinite;
+    border-radius: 42.5%;
+    background: rgba(20,20,20,0.5);
+}
+
+@keyframes animar {
+    0% {
+        transform: translate(-50%, -75%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -75%) rotate(360deg);
+    }
+}
+
+header .content {
+    position: absolute;
+    z-index: 1;
+    color: #fff;
+    font-size: 4em;
+    display: flex;
+    pointer-events: none;
+}
+
+header .perfil {
+    z-index: 1;
+    position: relative;
+    top: -20px;
+    margin-left: 20px;
+}
+
+header .perfil img {
+    width: 150px;
+    border-radius: 50%;
+}
+
+/* main */
+
+main {
+    background: linear-gradient(to top,rgba(20,20,20,1), #4973ff);
+}
+
+main .acerca-de {
+    padding: 50px 0;
+    text-align: center;
+}
+
+main .contenedor-texto h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 2em;
+    letter-spacing: 1px;
+}
+
+main .contenedor-texto p {
+    letter-spacing: 1ox;
+    line-height: 25px;
+    color: #fff;
+    font-size: 1.1em;
+    font-weight: 400;
+}
+
+main .contenedor-texto p .edit {
+    font-weight: 300;
+    color: #b1b1b1;
+}
+
+/* Main cartas */
+
+main .contenedor-cartas {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+main .carta {
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgba(0,0,0,0.5);
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.5);
+    border-left: 1px solid rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(5px);
+}
+
+main .carta .contenido {
+    padding: 20px;
+    text-align: center;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+    pointer-events: none;
+}
+
+main .carta:hover .contenido {
+    transform: translateY(0px);
+    opacity: 1;
+}
+
+main .carta .contenido h2 {
+    position: absolute;
+    top: -70px;
+    right: 30px;
+    font-size: 8em;
+    color: rgba(255, 255, 255, 0.1);
+    pointer-events: none;
+}
+
+main .carta .contenido h3 {
+    font-size: 1.8em;
+    color: #fff;
+    margin-bottom: 10px;
+}
+
+main .carta .contenido p {
+    font-size: 1em;
+    font-weight: 300;
+    color: #fff;
+    line-height: 20px;
+    letter-spacing: 1px;
+}
+
+/* footer */
+
+footer {
+    background: rgba(20,20,20,1);
+    padding: 50px 0;   
+}
+
+footer .contenedor {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+footer .animacion {
+    width: 185px;
+    margin-bottom: 20px;
+}
+
+footer h2 {
+    position: relative;
+    font-size: 3em;
+    color: rgba(20,20,20,1);
+    -webkit-text-stroke: 0.1vw #383d52;
+}
+
+footer h2::before {
+    content: attr(data-text);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 100%;
+    color:#4973ff;
+    -webkit-text-stroke: 0vw #383d52;
+    border-right: 2px solid#4973ff;
+    overflow: hidden;
+    animation: letra 6s linear infinite;
+}
+
+@keyframes letra {
+    0%, 10%, 100% {
+        width: 0;
+    }
+    70%, 90% {
+        width: 100%;
+    }
+}
+
+/* footer redes */
+
+footer .redes {
+    position: relative;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer .redes .iconos {
+    width: 100px;
+}
+
+footer .redes .iconos path,
+rect {
+    fill: transparent;
+    stroke-width: 5;
+    stroke: #4973ff;
+}
+
+footer .redes .iconos.twitter path {
+    stroke-dasharray: 2160;
+    stroke-dashoffset: 0;
+}
+
+footer .redes .iconos.twitter:hover path {
+    animation: animar-twitter 2s linear forwards;
+}
+
+@keyframes animar-twitter {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    40% {
+        stroke-dashoffset: 2160;
+    }
+    80% {
+        stroke-dashoffset: 4320;
+        fill: transparent
+    }
+    100% {
+        stroke-dashoffset: 4320;
+        fill: #4973ff;
+    }
+}
+
+footer .redes .iconos.behance path {
+    stroke-dasharray: 1130;
+    stroke-dashoffset: 0;
+}
+
+footer .redes .iconos.behance:hover path {
+    animation: animar-behance 2s linear forwards;
+}
+
+@keyframes animar-behance {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    40% {
+        stroke-dashoffset: 1130;
+    }
+    80% {
+        stroke-dashoffset: 2260;
+        fill: transparent
+    }
+    100% {
+        stroke-dashoffset: 2260;
+        fill: #4973ff;
+    }
+}
+
+footer .redes .iconos.github path {
+    stroke-dasharray: 2950;
+    stroke-dashoffset: 0;
+}
+
+footer .redes .iconos.github:hover path {
+    animation: animar-github 2s linear forwards;
+}
+
+@keyframes animar-github {
+    0% {
+        stroke-dashoffset: 0;
+    }
+    40% {
+        stroke-dashoffset: 2950;
+    }
+    80% {
+        stroke-dashoffset: 5900;
+        fill: transparent
+    }
+    100% {
+        stroke-dashoffset: 5900;
+        fill: #4973ff;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    header .content {
+        font-size: 3em;
+    }
+
+    header .perfil {
+        top: -30px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    header .menu_nav {
+        right: 0;
+    }
+    
+    header .menu_nav ul li a{
+        margin-right: 30px;
+    }
+
+    header .content {
+        font-size: 2em;
+    }
+    
+    header .perfil {
+        top: -40px;
+    }
+}
