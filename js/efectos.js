@@ -2,7 +2,7 @@ $(document).ready (function(){
 
     var acercaDE = $('#acerca-de').offset().top,
         skill = $('#skill').offset().top;
-		/* web = $('#web').offset().top; */
+		web = $('#web').offset().top;
 
     $('#btn-acerda-de').on('click', function(e){
         e.preventDefault();
@@ -14,15 +14,15 @@ $(document).ready (function(){
     $('#btn-skill').on('click', function(e){
         e.preventDefault();
         $('html, body').animate({
-            scrollTop: skill -160
+            scrollTop: skill +40
         }, 500);
     });
     
-    /* $('#btn-web').on('click', function(e){
+    $('#btn-web').on('click', function(e){
         e.preventDefault();
         $('html, body').animate({
             scrollTop: web
         }, 500);
     });
- */
+
 });
