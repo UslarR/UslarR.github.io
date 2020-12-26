@@ -147,6 +147,18 @@ main .contenedor-texto p .edit {
 
 /* Main cartas */
 
+main .habilidades {
+    padding-top: 50px;
+}
+
+main h2 {
+    color: #fff;
+    margin-bottom: 20px;
+    font-size: 2em;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
 main .contenedor-cartas {
     position: relative;
     display: flex;
@@ -208,6 +220,40 @@ main .carta .contenido p {
     line-height: 20px;
     letter-spacing: 1px;
 }
+
+/* Main web */
+
+main .web {
+    padding-top: 50px;
+}
+
+main .contenedor-web {
+    display: flex;
+    margin-top: 100px;
+    text-align: center;
+}
+
+main .contenedor-web img {
+    width: 90%;
+    clip-path: inset(5% 20% 15% 10%);
+    transition: 1s;
+    display: inline-block;
+}
+
+main .contenedor-web img:hover {
+    clip-path: inset(0 0 0 0);
+}
+
+main .contenedor-web a {
+    color: #4973ff;
+    text-decoration: none;
+}
+
+main .contenedor-web a:hover {
+    color: #4973ff85;
+}
+
+
 
 /* footer */
 
